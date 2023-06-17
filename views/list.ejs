@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <h1 class = "too">TO DO LIST</h1>
    <div class = "box" id = "heading">
       <h1> <%=title%></h1>  
     </div>
@@ -23,7 +24,7 @@
     <%  } %>
        </ul>
         <form class = "item"action="/" method="POST">
-            <input type="text" name="listItem" placeholder = "New Item" autocomplete="off">
+            <input type="text" name="listItem" placeholder = "New Item" autocomplete="off" required>
     
             <button type="submit" >+</button>
         </form>
