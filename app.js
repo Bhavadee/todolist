@@ -7,8 +7,9 @@ const port = 9930;
 const app = express();
 var items = ["buy","make","Eat"];
 app.set("view engine", 'ejs');
-app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static('CSS'));
 app.get('/', (req, res) => {
   var day = new Date();
   
