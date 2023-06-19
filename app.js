@@ -61,7 +61,7 @@ app.get('/', async(req, res) => {
  app.post("/delete",async (req,res) =>{
 
    const checkItemId = req.body.checkbox;
-   console.log(checkItemId);
+   
     await Item.findOneAndDelete({name:checkItemId});
   res.redirect("/")
 })
