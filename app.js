@@ -31,12 +31,20 @@ const defaul = [item1,item2];
 
 
 app.get('/', async(req, res) => {
+    var day = new Date();
+
+  var options = {
+    weekday:"long",
+    day:"numeric",
+    month:"long"
+  };
+  var da = day.toLocaleDateString("en-IN",options);
   let foundItems = await Item.find();
   if(foundItems.length == 0){
     Item.insertMany(defaul);
     res.redirect("/")
   }else{
-    res.render("list", {title:"Today", newTasks:foundItems});
+    res.render("list", {title:da, newTasks:foundItems});
   }
     
 });
